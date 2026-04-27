@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import plotly.express as px
+#import plotly.express as px
 
 def main():
     data = pd.read_excel('Base.xlsx', sheet_name='Base')
@@ -13,4 +13,3 @@ def main():
 
     filtro_ano = st.sidebar.selectbox("Selecione o Ano:", options=["Todos"] + sorted(anos), index=0)
     filtro_pais = st.sidebar.selectbox("Selecione o País:", options=["Todos"] + sorted(paises), index=0)
-    
