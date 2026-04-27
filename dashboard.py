@@ -20,4 +20,14 @@ def main():
     if filtro_pais != "Todos":
         data_filtrada = data_filtrada[data_filtrada['País'] == filtro_pais]
 
+    grafico_lucro_segmento = px.bar(
+        data_filtrada.groupby('Segmento')['Lucro'].sum().reset_index(),
+        x = 'Segmento', y = 'Lucro',
+        title = 'Lucro Por Segmento',
+        color = 'Segmento',
+        text_auto=True
+    )
+    grafico_lucro_segmento.update_layout(showlegend=False)
+
 main()
+

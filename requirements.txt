@@ -1,6 +1,4 @@
 streamlit
 pandas
-numpy
 plotly
-openpyxl    # se precisar ler xlsx
-pytest      # para testes unitários
+openpyxl #abrir arquivos xlsx
