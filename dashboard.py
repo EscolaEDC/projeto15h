@@ -13,3 +13,8 @@ def main():
 
     filtro_ano = st.sidebar.selectbox("Selecione o Ano:", options=["Todos"] + sorted(anos), index=0)
     filtro_pais = st.sidebar.selectbox("Selecione o País:", options=["Todos"] + sorted(paises), index=0)
+    data_filtrada = data.copy()
+    if filtro_ano != 'Todos':
+        data_filtrada = data_filtrada[data_filtrada['Ano'] == filtro_ano]
+    if filtro_pais != 'Todos':
+        data_filtrada = data_filtrada[data_filtrada['País'] == filtro_pais]
