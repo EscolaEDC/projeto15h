@@ -21,7 +21,7 @@ def main():
         data_filtrada = data_filtrada[data_filtrada['País'] == filtro_pais]
 
     gf_lucro_segmento = px.bar(
-        data_filtrada.groupby('Segmento')['Lucro'].sum().reset_index(),
+        data_filtrada.groupby('Segmento')["Lucro"].sum().reset_index(),
         x='Segmento', y='Lucro',
         title='Lucro por Segmento',
         color='Segmento',
@@ -31,14 +31,14 @@ def main():
     gf_lucro_segmento.update_layout(showlegend=False)
 
     gf_vendas_tempo = px.line(
-        data_filtrada.groupby('Segmento')['Lucro'].sum().reset_index(),
+        data_filtrada.groupby('Data')['Vendas Brutas'].sum().reset_index(),
         x='Data', y='Vendas Brutas',
         title='Vendas ao Longo do Tempo',
         markers=True
     )
 
     gf_venda_produto = px.pie(
-        data_filtrada.groupby('Segmento')['Lucro'].sum().reset_index(),
+        data_filtrada.groupby('Produto')['Unidades Vendidas'].sum().reset_index(),
         values='Unidades Vendidas', names='Produto',
         title='Distribuição de Produtos Vendidos'
     )
