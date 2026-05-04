@@ -20,4 +20,3 @@ def main():
     if filtro_pais != "Todos":
         data_filtrada = data_filtrada[data_filtrada['País'] == filtro_pais]
 
-main()
